@@ -19,11 +19,3 @@ inputUncons :: Input                  -- input to check
 inputUncons (Input _ [])       = Nothing
 inputUncons (Input loc (x:xs)) = Just (x, Input (loc + 1) xs)
 
-data JsonValue
-  = JsonNull
-  | JsonBool Bool
-  | JsonNumber Double
-  | JsonString String
-  | JsonArray [JsonValue]
-  | JsonObject [(String, JsonValue)]
-  deriving (Show, Eq)
